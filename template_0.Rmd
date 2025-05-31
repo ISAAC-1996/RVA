@@ -21,6 +21,11 @@ params:
   gap_30: NULL
   gap_50: NULL
   gap_100: NULL
+  bio2: NULL
+  gap_total2: NULL
+  gap_30_2: NULL
+  gap_50_2: NULL
+  gap_100_2: NULL
 ---
 
 ```{sass sass_setup, echo = FALSE}
@@ -73,7 +78,7 @@ params:
 
 
 .pharma-logo img 
-  width: 40px
+  width: 30px
   height: auto
   margin-right: 10px
   margin-top: 90px
@@ -81,9 +86,11 @@ params:
 
 .pharma-info span 
   color: #ffffff
-  font-family: "'Nunito', sans-serif"
+  font-family: 'Nunito', sans-serif
   margin-right: 5px
   font-size: 12px
+  margin-left: 10px
+
 
 .date-info 
   position: absolute
@@ -105,6 +112,7 @@ params:
   font-family: 'Nunito', sans-serif
   margin-right: 3px
   font-size: 12px
+  margin-left: 10px
 
 .section-titles 
   display: flex
@@ -114,7 +122,7 @@ params:
   padding: 2px 0px
   font-family: 'Nunito', sans-serif
   flex-direction: column
-  margin-top: 0px
+  margin-top: -12px
 
 .section-titles h2 
   font-size: 20px
@@ -134,12 +142,21 @@ params:
   background-color: #f1b530
   margin: 5px 0 0 0
 
+.change
+  font-size: 16px
+  font-weight: normal
+  font-style: italic
+  color: #254680
+  margin: 0
+  padding: 0
+
 .table-container 
   display: flex
   justify-content: space-around
   align-items: stretch
   background-color: #F2F5F7
   flex-direction: column
+  margin-top: -5px
 
 
 .table 
@@ -190,6 +207,7 @@ params:
   height: auto
   margin-bottom: 20px
   padding-bottom: 0
+  margin-top: -5px
                 
 .table-top-5 
   height: auto
@@ -284,15 +302,13 @@ params:
   align-items: center
   background-color: #F0E2B8     
   padding: 4px 12px
-  border-radius: 10px
-  border: 2px solid #000000
-  width: 135%
-  height: 120px
+  width: 150%
+  height: 140px
   font-family: 'Nunito', sans-serif
   margin-top: -10px
   
 .marge
-  color:#ff9900
+  color:#008000
   font-weight: bold
   font-size: 15px
 
@@ -323,7 +339,7 @@ params:
   font-size: 14px
   margin: 0
   line-height: 1.5
-  width: 135% 
+  width: 140% 
 
 .bulle-discussion ul 
   margin: 10px 0 0 0
@@ -337,7 +353,7 @@ params:
 .section-lancements 
   padding-top: 5px
   background-color: #F2F5F7
-  margin-top: 0px
+  margin-top: -3px
 
 .section-lancements h2 
   font-size: 20px
@@ -345,7 +361,6 @@ params:
   color: #254680
   margin: 0 0 10px 0
   position: relative
-  margin-top: 0px
 
 .section-lancements h2::after 
   content: ''
@@ -361,7 +376,7 @@ params:
   font-size: 12px
   width: 99%
   margin: 0 auto
-  margin-top: 0px
+  margin-top: -5px
 
 .table-lancements th 
   background-color: #254680
@@ -437,7 +452,6 @@ params:
   padding-top: 5px
   background-color: #ffffff
   font-family: "'Nunito', sans-serif"
-  margin-top: 30px
 
 .section-biosimilaires h2 
   font-size: 20px
@@ -510,13 +524,11 @@ params:
   align-items: center
   background-color: #F0E2B8     
   padding: 16px 16px
-  border-radius: 10px
-  border: 2px solid #254680
-  width: 135%
+  width: 150%
   height: 180px
   font-size: 14px
   font-family: 'Nunito', sans-serif
-  margin-top: 60px
+  margin-top: 10px
   
 .bulle-im img 
   width: 130px
@@ -611,6 +623,14 @@ params:
     font-family: 'Nunito', sans-serif  !important
     -webkit-print-color-adjust: exact !important
     print-color-adjust: exact !important
+  .change
+    font-size: 16px!important
+    font-weight: normal!important
+    font-style: italic!important
+    color: #254680!important
+    -webkit-print-color-adjust: exact !important
+    print-color-adjust: exact !important
+
   .table-container
     background-color: #F2F5F7 !important
     font-family: 'Nunito', sans-serif  !important
@@ -694,7 +714,6 @@ params:
     print-color-adjust: exact !important
   .bulle-discussion
     background-color:  #fffacc!important
-    border: 2px solid #254680 !important
     font-family: 'Nunito', sans-serif  !important
     -webkit-print-color-adjust: exact !important
     print-color-adjust: exact !important
@@ -815,7 +834,6 @@ params:
     print-color-adjust: exact !important
   .bulle-dis
     background-color: #fffacc!important   
-    border: 3px solid #254680!important
     font-family: 'Nunito', sans-serif  !important
     -webkit-print-color-adjust: exact !important
     print-color-adjust: exact !important
@@ -835,7 +853,7 @@ params:
     -webkit-print-color-adjust: exact !important
     print-color-adjust: exact !important
   .marge
-    color:#ff9900!important
+    color:#008000!important
     -webkit-print-color-adjust: exact !important
     print-color-adjust: exact !important
   .estimation
@@ -861,10 +879,10 @@ a[href^="https"]::after
 
 <div class="html"><div class="rapport-header">
   <h1 class="rapport-title">Rapport mensuel Sandoz</h1>
-<div class="pharma-info"><img src="https://isaac-1996.github.io/Localisation/pha.png" alt="Logo Pharmacie" /><span>`r params$pharmacie`</span><span></div><div class="date-info"><img src="https://isaac-1996.github.io/Localisation/Logo_calendrier.png" alt="Logo Calendrier" /><span>`r params$mois_annee`</span></div>
+<div class="pharma-info"><img src="https://isaac-1996.github.io/Localisation/Pharmacie2_final.png" alt="Logo Pharmacie" /><span>`r params$pharmacie`</span><span></div><div class="date-info"><img src="https://isaac-1996.github.io/RVA/calendrier_2.png" alt="Logo Calendrier" /><span>`r params$mois_annee`</span></div>
 </div>
 
-<div class="section-titles"><h2>Suivi des switchs</h2></div>
+<div class="section-titles"><h2>Suivi des switchs :<span class="change"> Produits Sandoz que vous avez substitués par d'autres produits équivalents</span></h2></div>
 <div class="table-container"><table class="table table-top-10">
     <thead>
       <tr>
@@ -880,7 +898,7 @@ a[href^="https"]::after
           cat('<tr>') 
           cat(paste0("<td>", capitalize_first(truncate_string(params$top_10[i, "Présentation"], 80)), "</td>"))
           cat(paste0('<td>', params$top_10[i, "Quantité"], '</td>'))      
-          cat(paste0('<td>', params$top_10[i, "PFHT"], '€</td>'))
+          cat(sprintf('<td>%.2f€</td>', as.numeric(params$top_10[i, "PFHT"])))
           cat('</tr>')  
         }
       } else {
@@ -889,7 +907,7 @@ a[href^="https"]::after
       ```
     </tbody>
   </table></div>
-<div class="section-titles"><h2>Princeps non substitués</h2></div>
+<div class="section-titles"><h2>Princeps non substitués : <span class="change">Les produits génériques que vous avez vendus sous forme princeps</span></h2></div>
 <div class="table-top-5-container"><table class="table table-top-5">
     <thead>
       <tr>
@@ -907,7 +925,7 @@ a[href^="https"]::after
           cat(paste0("<td>", capitalize_first(truncate_string(params$top_5[i, "Présentation"], 80)), "</td>"))
           cat(paste0('<td>', capitalize_first(truncate_string(as.character(params$top_5[i, "Laboratoire"]), 25)), '</td>'))
           cat(paste0('<td style="text-align: right !important;">', params$top_5[i, "Quantité"], '</td>'))      
-          cat(paste0('<td style="text-align: right !important;">', params$top_5[i, "PFHT"], '€</td>'))
+          cat(sprintf('<td style="text-align: right !important;">%.2f€</td>', as.numeric(params$top_5[i, "PFHT"])))
           cat('</tr>')  
         }
       } else {
@@ -917,7 +935,10 @@ a[href^="https"]::after
     </tbody>
   </table></div>
   
-<div class="discussion-wrapper"><div class="bulle-discussion"><p>Vous auriez pu optimiser votre chiffre d’affaires vente sur le mois de `r params$mois_annee` avec une marge de<span class="marge"> `r params$marge`€</span> via :<br> <strong>Switchs :</strong> <strong class="estimation">`r params$switch_total`€</strong><br><strong>Princeps non substitués :</strong> <strong class="estimation">`r params$princeps_total`€</strong></p></div><div class="bulle-img"><img src="https://isaac-1996.github.io/RVA/im1.png" alt="Conseillère"/></div></div></div>
+<div class="discussion-wrapper"><div class="bulle-discussion"><ul><li>Ces tableaux présentent les 15 produits que vous pourriez passer chez Sandoz pour améliorer votre marge.<br>La remise laboratoire correspond à celle du produit substitué et non à la remise Sandoz.<br>Vous pouvez demander l'intégralité du tableau sur le site <strong>sandoz.ospharm.org</strong>.<br><br><strong>Switchs :</strong> <span class="estimation">`r sprintf('%.2f', as.numeric(params$switch_total))`€</span><br><strong>Princeps non substitués :</strong> <span class="estimation">`r sprintf('%.2f', as.numeric(params$princeps_total))`€</span>
+</li></ul></div></div>
+
+
 
 <div class="section-lancements"><h2>Lancements sur les 6 derniers mois</h2><table class="table-lancements">
     <thead>
@@ -958,10 +979,9 @@ a[href^="https"]::after
 
 <div class="html"><div class="rapport-header">
   <h1 class="rapport-title">Rapport mensuel Sandoz</h1>
-<div class="pharma-info"><img src="https://isaac-1996.github.io/Localisation/pha.png" alt="Logo Pharmacie" /><span>`r params$pharmacie`</span><span></div><div class="date-info"><img src="https://isaac-1996.github.io/Localisation/Logo_calendrier.png" alt="Logo Calendrier" /><span>`r params$mois_annee`</span></div>
+<div class="pharma-info"><img src="https://isaac-1996.github.io/Localisation/Pharmacie2_final.png" alt="Logo Pharmacie" /><span>`r params$pharmacie`</span><span></div><div class="date-info"><img src="https://isaac-1996.github.io/RVA/calendrier_2.png" alt="Logo Calendrier" /><span>`r params$mois_annee`</span></div>
 </div>
-<br>
-<div class="section-biosimilaires"><h2>Suivi des biosimilaires substituables</h2><table class="table-biosimilaires">
+<div class="section-biosimilaires"><h2>Suivi des biosimilaires substituables - Mois en cours</h2><table class="table-biosimilaires">
     <thead>
       <tr>
         <th>Molécules</th>
@@ -984,8 +1004,8 @@ a[href^="https"]::after
           cat(paste0('<td>', params$bio[i, "Molécules"], '</td>'))  
           cat(paste0('<td>', params$bio[i, "Quantité Sandoz"], '</td>'))
           cat(paste0('<td>', params$bio[i, "Quantité autres laboratoires"], '</td>'))
-          cat(paste0('<td>', params$bio[i, "PFHT Sandoz"], '€</td>'))
-          cat(paste0('<td>', params$bio[i, "PFHT autres laboratoires"], '€</td>'))
+          cat(sprintf('<td>%.2f€</td>', as.numeric(params$bio[i, "PFHT Sandoz"])))
+          cat(sprintf('<td>%.2f€</td>', as.numeric(params$bio[i, "PFHT autres laboratoires"])))
           pdm_value <- params$bio[i, "PDM PFHT"]
           pdm_style <- case_when(
           pdm_value < 50 ~ "pdm-low",
@@ -1002,30 +1022,100 @@ a[href^="https"]::after
   </table>
 </div>
 <div class="discussion-wrapper">
-  <div class="bulle-im"><img src="https://isaac-1996.github.io/RVA/im2.png" alt="Conseillère"/></div>
   <div class="bulle-dis"><p>Sur la période <strong class="estimation">`r params$mois_annee`</strong>, voici les estimations de chiffres d'affaires à réaliser afin d'atteindre les objectifs de parts de marché (PDM PFHT) suivants :<br><br>
-      ```{r display_objectives, echo=FALSE, results='asis'}
-  if (!is.null(params$gap_total)) {
-    gap_total_num <- as.numeric(params$gap_total)
-    if (gap_total_num < 30) {
-    # gap_total inferieur à 30%
-      cat(paste0('<span class="marge">', params$gap_30, '€</span> CA PFHT à réaliser pour atteindre <strong class="estimation">30% PDM</strong><br>'))
-      cat(paste0('<span class="marge">', params$gap_50, '€</span> CA PFHT à réaliser pour atteindre <strong class="estimation">50% PDM</strong><br>'))
-      cat(paste0('<span class="marge">', params$gap_100, '€</span> CA PFHT à réaliser pour atteindre <strong class="estimation">100% PDM</strong>'))
-    } else if (gap_total_num >= 30 && gap_total_num < 50) {
-    # gap_total entre 50% and 100% 
-      cat(paste0('<span class="marge">', params$gap_50, '€</span> CA PFHT à réaliser pour atteindre <strong class="estimation">50% PDM</strong><br>'))
-      cat(paste0('<span class="marge">', params$gap_100, '€</span> CA PFHT à réaliser pour atteindre <strong class="estimation">100% PDM</strong>'))
-    } else {
-     # gap_total sup 50%
-      cat(paste0('<span class="marge">', params$gap_100, '€</span> CA PFHT à réaliser pour atteindre <strong class="estimation">100% PDM</strong>'))
-    }
-  } else {
-    cat("Données non disponibles pour ce mois.")
-  }
-      ```  
-  
+      ```{r display_objectives_0, echo=FALSE, results='asis'}
+        if (!is.null(params$gap_total)) {
+          gap_total_num <- as.numeric(params$gap_total)
+          if (gap_total_num < 30) {
+            # gap_total inférieur à 30%
+            cat(sprintf('<span class="marge">%.2f€</span> CA PFHT à réaliser pour atteindre <strong class="estimation">30%% PDM</strong><br>', as.numeric(params$gap_30)))
+            cat(sprintf('<span class="marge">%.2f€</span> CA PFHT à réaliser pour atteindre <strong class="estimation">50%% PDM</strong><br>', as.numeric(params$gap_50)))
+          } else if (gap_total_num >= 30 && gap_total_num < 50) {
+            # entre 30 et 50
+            cat('<span class="marge">0.00€</span> CA PFHT à réaliser pour atteindre <strong class="estimation">30% PDM</strong><br>')
+            cat(sprintf('<span class="marge">%.2f€</span> CA PFHT à réaliser pour atteindre <strong class="estimation">50%% PDM</strong><br>', as.numeric(params$gap_50)))
+          } else if (gap_total_num >= 50) {
+            # déjà à 50% ou +
+            cat('<span class="marge">0.00€</span> CA PFHT à réaliser pour atteindre <strong class="estimation">30% PDM</strong><br>')
+            cat('<span class="marge">0.00€</span> CA PFHT à réaliser pour atteindre <strong class="estimation">50% PDM</strong><br>')
+          }
+        } else {
+          cat("Données non disponibles pour ce mois.")
+        }
+      ```   
 </p></div>
+</div>
+<br>
+<!-- Section pour les biosimilaires depuis mars 2025 -->
+<div class="table-container">
+  <div class="section-biosimilaires"><h2>Suivi des biosimilaires substituables - Depuis Mars 2025</h2>
+  <table class="table-biosimilaires">
+    <thead>
+      <tr>
+        <th>Molécules</th>
+        <th>Quantité Sandoz</th>
+        <th>Quantité autres</th>
+        <th>PFHT Sandoz</th>
+        <th>PFHT autres</th>
+        <th>PDM PFHT Sandoz</th>
+      </tr>
+    </thead>
+    <tbody>
+      ```{r biosimilaire2, echo=FALSE, results='asis'}
+      if (!is.null(params$bio2) && nrow(params$bio2) > 0) {
+        for (i in 1:nrow(params$bio2)) {
+          if (i == nrow(params$bio2)) {
+            cat('<tr class="total-row">')
+          } else {
+            cat('<tr>')
+          }
+          cat(paste0('<td>', params$bio2[i, "Molécules"], '</td>'))  
+          cat(paste0('<td>', params$bio2[i, "Quantité Sandoz"], '</td>'))
+          cat(paste0('<td>', params$bio2[i, "Quantité autres laboratoires"], '</td>'))
+          cat(sprintf('<td>%.2f€</td>', as.numeric(params$bio2[i, "PFHT Sandoz"])))
+          cat(sprintf('<td>%.2f€</td>', as.numeric(params$bio2[i, "PFHT autres laboratoires"])))
+          pdm_value <- params$bio2[i, "PDM PFHT"]
+          pdm_style <- case_when(
+            pdm_value < 50 ~ "pdm-low",
+            pdm_value > 80 ~ "pdm-high",
+            TRUE ~ "")
+          cat(paste0('<td class="', pdm_style, '">', params$bio2[i, "PDM PFHT"], ' %</td>'))
+          cat('</tr>')  
+        }
+      } else {
+        cat("<tr><td colspan='6'><strong>Aucune donnée disponible pour ce mois.</strong></td></tr>")
+      }
+      ```  
+    </tbody>
+  </table>
+</div></div>
+<div class="discussion-wrapper">
+  <div class="bulle-dis"><p>Depuis <strong class="estimation">le début du mois de Mars 2025</strong>, voici les estimations de chiffres d'affaires à réaliser afin d'atteindre les objectifs de parts de marché (PDM PFHT) suivants :<br><br>
+      ```{r display_objectives_mars2025, echo=FALSE, results='asis'}
+      if (!is.null(params$gap_total2)) {
+        gap_total_num2 <- as.numeric(params$gap_total2)
+        
+        if (gap_total_num2 < 30) {
+          # Cas où la PDM est inférieure à 30%
+          cat(sprintf('<span class="marge">%.2f€</span> CA PFHT à réaliser pour atteindre <strong class="estimation">30%% PDM</strong><br>', as.numeric(params$gap_30_2)))
+          cat(sprintf('<span class="marge">%.2f€</span> CA PFHT à réaliser pour atteindre <strong class="estimation">50%% PDM</strong><br>', as.numeric(params$gap_50_2)))
+          
+        } else if (gap_total_num2 >= 30 && gap_total_num2 < 50) {
+          # Cas où la PDM est entre 30% et 50%
+          cat('<span class="marge">0.00€</span> CA PFHT à réaliser pour atteindre <strong class="estimation">30% PDM</strong><br>')
+          cat(sprintf('<span class="marge">%.2f€</span> CA PFHT à réaliser pour atteindre <strong class="estimation">50%% PDM</strong><br>', as.numeric(params$gap_50_2)))
+          
+        } else if (gap_total_num2 >= 50) {
+          # Cas où la PDM est déjà supérieure ou égale à 50%
+          cat('<span class="marge">0.00€</span> CA PFHT à réaliser pour atteindre <strong class="estimation">30% PDM</strong><br>')
+          cat('<span class="marge">0.00€</span> CA PFHT à réaliser pour atteindre <strong class="estimation">50% PDM</strong><br>')
+        }
+      } else {
+        cat("Données non disponibles pour cette période.")
+      }
+      ```  
+  </p></div>
+</div>
 </div>
 <div class="footer"><div class="contact"><a href="https://www.ospharm.com/" target="_blank" style="text-decoration: none;"><img src="https://isaac-1996.github.io/Localisation/03_LOGO_OSPHARM.png" alt="Ospharm"/></a><p>02 40 53 63 44 | sandoz.ospharm.org</p></div><div class="partner">En partenariat avec</div><div><img src="https://isaac-1996.github.io/Localisation/Sandoz%20Logo%20Black%20and%20White%20300dpi.bmp__.png" alt="Sandoz"></div></div>
 </div>
